@@ -7,11 +7,11 @@ const ProductTag = require('./ProductTag');
 
 
 // associations
-Product.belongsTo(Category, {
-  foreignKey: 'category_id'
+Category.hasMany(Product, {
+  foreignKey: 'category_id',
 });
 
-Category.hasMany(Product, {
+Product.belongsTo(Category, {
   foreignKey: 'category_id'
 });
 
